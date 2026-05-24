@@ -9,7 +9,7 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-32 px-6">
       <div className="max-w-3xl mx-auto reveal">
         <h2 className="text-2xl md:text-3xl font-light tracking-wide text-center mb-12">技能与证书</h2>
 
@@ -18,29 +18,24 @@ export default function Skills() {
           {/* Certs */}
           <div>
             <h3 className="text-sm font-medium text-dark/60 uppercase tracking-widest mb-4">资格证书</h3>
-            <div className="flex flex-wrap gap-2">
-              {certs.map((cert) => (
-                <span
-                  key={cert}
-                  className="px-3 py-1.5 text-xs font-light text-dark/60 bg-white/60 border border-dark/10 rounded-full"
-                >
-                  {cert}
-                </span>
-              ))}
-            </div>
+            <p className="text-sm text-dark/50 font-light leading-relaxed">
+              {certs.join('  |  ')}
+            </p>
           </div>
 
           {/* Professional skills */}
           <div>
             <h3 className="text-sm font-medium text-dark/60 uppercase tracking-widest mb-4">专业技能</h3>
-            <ul className="space-y-2 text-sm text-dark/50 font-light leading-relaxed">
+            <div className="flex flex-wrap gap-2">
               {skills.map((skill, i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="text-accent mt-0.5 shrink-0 text-xs">—</span>
-                  <span>{skill}</span>
-                </li>
+                <span
+                  key={i}
+                  className="px-3 py-1.5 text-xs font-light bg-accent/10 text-accent rounded-full"
+                >
+                  {skill}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
 
         </div>

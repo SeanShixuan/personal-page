@@ -19,8 +19,8 @@ export default function Hero() {
       <div className="text-center max-w-xl">
         {/* Avatar */}
         <div className={`hero-item transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <div className="w-[180px] h-[180px] mx-auto rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center shadow-lg shadow-accent/10">
-            <span className="text-5xl font-light text-accent/60">谢</span>
+          <div className="w-[180px] h-[180px] mx-auto rounded-full overflow-hidden shadow-lg shadow-accent/10 ring-4 ring-white">
+            <img src="/avatar.jpg" alt="谢施炫" className="w-full h-full object-cover" />
           </div>
         </div>
 

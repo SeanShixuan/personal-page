@@ -1,6 +1,6 @@
 export default function Experience() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-32 px-6">
       <div className="max-w-3xl mx-auto reveal">
         <h2 className="text-2xl md:text-3xl font-light tracking-wide text-center mb-12">实习经历</h2>
 
@@ -10,7 +10,7 @@ export default function Experience() {
             <span className="text-xs text-dark/40 font-normal whitespace-nowrap">学员成长管理师</span>
             <span className="text-xs text-dark/30 font-light">2022年8月 — 2023年8月</span>
           </div>
-          <ul className="space-y-2 text-sm text-dark/50 font-light leading-relaxed">
+          <ul className="list-none space-y-2 text-sm text-dark/50 font-light leading-relaxed">
             <li className="flex gap-2">
               <span className="text-accent mt-1 shrink-0">•</span>
               <span>收集整理学员训练数据，通过Excel和可视化工具分析技能进展，生成月度成长报告，制定个性化训练方案</span>

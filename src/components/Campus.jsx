@@ -1,6 +1,6 @@
 export default function Campus() {
   return (
-    <section className="py-24 px-6 bg-dark/[0.02]">
+    <section className="py-32 px-6 bg-dark/[0.02]">
       <div className="max-w-3xl mx-auto reveal">
         <h2 className="text-2xl md:text-3xl font-light tracking-wide text-center mb-12">在校经历</h2>
 
@@ -13,7 +13,7 @@ export default function Campus() {
               <span className="text-xs text-dark/40 font-normal">组织委员</span>
               <span className="text-xs text-dark/30 font-light">2022年9月 — 2025年6月</span>
             </div>
-            <ul className="space-y-2 text-sm text-dark/50 font-light leading-relaxed">
+            <ul className="list-none space-y-2 text-sm text-dark/50 font-light leading-relaxed">
               <li className="flex gap-2">
                 <span className="text-accent mt-1 shrink-0">•</span>
                 <span>组织5+场班级学术讲座、实习分享会及职业规划活动，收集分析活动数据并生成报告，提出优化建议</span>
@@ -32,7 +32,7 @@ export default function Campus() {
               <span className="text-xs text-dark/40 font-normal">干事</span>
               <span className="text-xs text-dark/30 font-light">2022年10月 — 2024年1月</span>
             </div>
-            <ul className="space-y-2 text-sm text-dark/50 font-light leading-relaxed">
+            <ul className="list-none space-y-2 text-sm text-dark/50 font-light leading-relaxed">
               <li className="flex gap-2">
                 <span className="text-accent mt-1 shrink-0">•</span>
                 <span>协助策划学校运动会、篮球比赛及趣味运动会等5+场大型校园体育活动</span>
