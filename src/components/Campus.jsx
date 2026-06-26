@@ -1,3 +1,4 @@
+import { Users } from 'lucide-react'
 import profile from '../data/profile'
 
 function highlightNumbers(text) {
@@ -12,18 +13,27 @@ function highlightNumbers(text) {
 
 export default function Campus() {
   return (
-    <section id="campus" className="py-32 px-6 bg-dark/[0.02] dark:bg-cream/[0.03]">
-      <div className="max-w-3xl mx-auto reveal">
-        <h2 className="text-2xl md:text-3xl font-light tracking-wide text-center mb-12">在校经历</h2>
+    <section>
+      <div className="flex items-center gap-3 mb-4">
+        <Users size={20} className="text-accent shrink-0" />
+        <h2 className="text-xl font-medium text-heading dark:text-surface tracking-wide">在校经历</h2>
+      </div>
+      <div className="panel-accent-bar" />
 
+      <div className="space-y-4">
         {profile.campus.map((item) => (
-          <div key={item.id} className="bg-white/50 dark:bg-dark/30 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-4">
-              <h3 className="text-base font-medium text-dark dark:text-cream">{item.organization}</h3>
-              <span className="text-xs text-dark/40 dark:text-cream/40 font-normal">{item.role}</span>
-              <span className="text-xs text-dark/30 dark:text-cream/30 font-light">{item.period}</span>
+          <div
+            key={item.id}
+            className="bg-card dark:bg-dark-card border border-border dark:border-dark-border rounded-xl p-5 shadow-sm"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+              <h3 className="text-sm font-medium text-heading dark:text-surface">{item.organization}</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-muted dark:text-slate-400 font-normal">{item.role}</span>
+                <span className="text-xs text-muted/60 dark:text-slate-500 font-light">{item.period}</span>
+              </div>
             </div>
-            <p className="text-sm text-dark/50 dark:text-cream/50 font-light leading-relaxed">
+            <p className="text-sm text-muted dark:text-slate-400 font-light leading-relaxed">
               {highlightNumbers(item.content)}
             </p>
           </div>

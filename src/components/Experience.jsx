@@ -1,3 +1,4 @@
+import { Briefcase } from 'lucide-react'
 import profile from '../data/profile'
 
 function highlightNumbers(text) {
@@ -12,30 +13,37 @@ function highlightNumbers(text) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-32 px-6">
-      <div className="max-w-3xl mx-auto reveal">
-        <h2 className="text-2xl md:text-3xl font-light tracking-wide text-center mb-12">实习经历</h2>
+    <section>
+      <div className="flex items-center gap-3 mb-4">
+        <Briefcase size={20} className="text-accent shrink-0" />
+        <h2 className="text-xl font-medium text-heading dark:text-surface tracking-wide">实习经历</h2>
+      </div>
+      <div className="panel-accent-bar" />
 
-        <div className="space-y-6">
-          {profile.experience.map((exp) => (
-            <div key={exp.id} className="bg-white/50 dark:bg-dark/30 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 group">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-4">
-                <h3 className="text-base font-medium text-dark dark:text-cream">{exp.company}</h3>
-                <span className="text-xs text-dark/40 dark:text-cream/40 font-normal whitespace-nowrap">{exp.role}</span>
-                <span className="text-xs text-dark/30 dark:text-cream/30 font-light">{exp.period}</span>
+      <div className="space-y-4">
+        {profile.experience.map((exp) => (
+          <div
+            key={exp.id}
+            className="bg-card dark:bg-dark-card border border-border dark:border-dark-border rounded-xl p-5 shadow-sm"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+              <h3 className="text-sm font-medium text-heading dark:text-surface">{exp.company}</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-muted dark:text-slate-400 font-normal">{exp.role}</span>
+                <span className="text-xs text-muted/60 dark:text-slate-500 font-light">{exp.period}</span>
               </div>
-              <p className="text-sm text-dark/50 dark:text-cream/50 font-light leading-relaxed mb-3">{exp.summary}</p>
-              <ul className="list-none space-y-2 text-sm text-dark/50 dark:text-cream/50 font-light leading-relaxed">
-                {exp.bullets.map((b, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-accent mt-1 shrink-0">•</span>
-                    <span>{highlightNumbers(b)}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-          ))}
-        </div>
+            <p className="text-sm text-muted dark:text-slate-400 font-light leading-relaxed mb-2.5">{exp.summary}</p>
+            <ul className="space-y-1.5 text-sm text-muted dark:text-slate-400 font-light leading-relaxed">
+              {exp.bullets.map((b, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-accent shrink-0 mt-0.5">•</span>
+                  <span>{highlightNumbers(b)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   )

@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 64px;
   font-size: 16px;
 }
 
@@ -16,47 +14,64 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dark body {
-  background: #333;
-  color: #FAF9F6;
-}
-
-@layer base {
-  * {
-    @apply border-gray-200;
+/* Prevent body scroll on desktop */
+@media (min-width: 768px) {
+  body {
+    overflow: hidden;
   }
 }
 
-/* Fade-in-up animation for scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+/* Content panel scrollbar */
+.content-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.content-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.content-scroll::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 2px;
+}
+.content-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
 }
 
-.reveal.visible {
+/* Tab panel fade transition */
+.tab-panel-enter {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.tab-panel-active {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Stagger delays for hero section */
-.hero-item:nth-child(1) { transition-delay: 0.1s; }
-.hero-item:nth-child(2) { transition-delay: 0.3s; }
-.hero-item:nth-child(3) { transition-delay: 0.5s; }
-.hero-item:nth-child(4) { transition-delay: 0.7s; }
-
-/* Mobile menu slide-in from right */
-@keyframes slide-in {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+/* Sidebar atmosphere gradient overlay */
+.sidebar-atmosphere {
+  background:
+    linear-gradient(135deg, rgba(59,130,246,0.03) 0%, transparent 50%, rgba(71,85,105,0.04) 100%),
+    radial-gradient(ellipse at 20% 80%, rgba(59,130,246,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(71,85,105,0.03) 0%, transparent 50%);
 }
-.animate-slide-in {
-  animation: slide-in 0.25s ease-out;
+
+/* Top decoration bar for panels */
+.panel-accent-bar {
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #3B82F6, #60A5FA, #93C5FD);
+  margin-bottom: 1.5rem;
 }
 
 /* Focus visible styles for keyboard accessibility */
 :focus-visible {
-  outline: 2px solid #60A5FA;
+  outline: 2px solid #3B82F6;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Horizontal scroll for mobile tabs */
+.mobile-tabs-scroll::-webkit-scrollbar {
+  display: none;
 }

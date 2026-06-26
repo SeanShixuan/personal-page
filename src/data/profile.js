@@ -7,10 +7,12 @@ const profile = {
   bio: '22岁，现居广州。善于将数据与业务场景结合，从数据中提炼洞见，支持商业决策与业务优化。',
 
   nav: [
-    { label: '关于', href: '#about' },
-    { label: '经历', href: '#education' },
-    { label: '技能', href: '#skills' },
-    { label: '联系', href: '#contact' },
+    { label: '关于我', tab: 'about' },
+    { label: '教育经历', tab: 'education' },
+    { label: '实习经历', tab: 'experience' },
+    { label: '在校经历', tab: 'campus' },
+    { label: '技能证书', tab: 'skills' },
+    { label: '联系我', tab: 'contact' },
   ],
 
   about: {

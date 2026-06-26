@@ -7,9 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#FAF9F6',
-        accent: '#60A5FA',
-        dark: '#333333',
+        surface: '#F8FAFC',
+        primary: '#475569',
+        accent: '#3B82F6',
+        heading: '#1E293B',
+        muted: '#64748B',
+        card: '#FFFFFF',
+        border: '#E2E8F0',
+        dark: {
+          DEFAULT: '#0F172A',
+          surface: '#1E293B',
+          card: '#334155',
+          border: '#475569',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
