@@ -35,7 +35,7 @@ export default function Hero() {
         {/* Bio */}
         <div className={`hero-item transition-all duration-700 mt-6 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <p className="text-sm md:text-base text-dark/50 leading-relaxed font-light">
-            2003年生，现居广州，热爱数字经济与产业发展研究，专注于用数据和技术创造价值。
+            22岁，现居广州。善于将数据与业务场景结合，从数据中提炼洞见，支持商业决策与业务优化。
           </p>
         </div>
 
