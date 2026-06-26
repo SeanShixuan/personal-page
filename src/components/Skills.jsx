@@ -1,43 +1,40 @@
+import profile from '../data/profile'
+
 export default function Skills() {
-  const certs = ['大学英语六级', '大学英语四级', '计算机二级']
-
-  const skills = [
-    '精通Excel、Word、PPT等办公软件',
-    '熟练使用统计分析工具（SPSS），能够完成数据整理、可视化分析及报告撰写',
-    '掌握经济学与管理学知识，能够结合数据进行业务分析、市场趋势研判及绩效评估',
-    '具备基础金融数据处理和商业分析能力，可快速适应相关岗位工作',
-  ]
-
   return (
     <section id="skills" className="py-32 px-6">
       <div className="max-w-3xl mx-auto reveal">
         <h2 className="text-2xl md:text-3xl font-light tracking-wide text-center mb-12">技能与证书</h2>
 
         <div className="grid md:grid-cols-2 gap-10">
-
           {/* Certs */}
           <div>
-            <h3 className="text-sm font-medium text-dark/60 uppercase tracking-widest mb-4">资格证书</h3>
-            <p className="text-sm text-dark/50 font-light leading-relaxed">
-              {certs.join('  |  ')}
-            </p>
-          </div>
-
-          {/* Professional skills */}
-          <div>
-            <h3 className="text-sm font-medium text-dark/60 uppercase tracking-widest mb-4">专业技能</h3>
+            <h3 className="text-sm font-medium text-dark/60 dark:text-cream/50 uppercase tracking-widest mb-4">资格证书</h3>
             <div className="flex flex-wrap gap-2">
-              {skills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1.5 text-xs font-light bg-accent/10 text-accent rounded-full"
-                >
-                  {skill}
+              {profile.skills.certs.map((cert, i) => (
+                <span key={i} className="px-3 py-1.5 text-xs font-light bg-accent/10 text-accent rounded-full">
+                  {cert}
                 </span>
               ))}
             </div>
           </div>
 
+          {/* Skill categories */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-medium text-dark/60 dark:text-cream/50 uppercase tracking-widest mb-4">专业技能</h3>
+            {profile.skills.categories.map((cat, i) => (
+              <div key={i}>
+                <p className="text-xs text-dark/40 dark:text-cream/40 font-light mb-1.5">{cat.name}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {cat.tags.map((tag, j) => (
+                    <span key={j} className="px-2.5 py-1 text-xs font-light bg-accent/10 text-accent rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

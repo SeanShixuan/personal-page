@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 64px;
   font-size: 16px;
 }
 
@@ -13,6 +14,11 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background: #333;
+  color: #FAF9F6;
 }
 
 @layer base {
@@ -46,4 +52,11 @@ body {
 }
 .animate-slide-in {
   animation: slide-in 0.25s ease-out;
+}
+
+/* Focus visible styles for keyboard accessibility */
+:focus-visible {
+  outline: 2px solid #60A5FA;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

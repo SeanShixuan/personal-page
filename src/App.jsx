@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,8 +8,25 @@ import Campus from './components/Campus'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import BackToTop from './components/BackToTop'
 
 export default function App() {
+  const [dark, setDark] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved) return saved === 'dark'
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
+
+  useEffect(() => {
+    const root = document.documentElement
+    if (dark) {
+      root.classList.add('dark')
+    } else {
+      root.classList.remove('dark')
+    }
+    localStorage.setItem('theme', dark ? 'dark' : 'light')
+  }, [dark])
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -26,9 +43,11 @@ export default function App() {
     return () => observer.disconnect()
   }, [])
 
+  const toggleDark = () => setDark((d) => !d)
+
   return (
-    <div className="bg-cream text-dark min-h-screen font-light">
-      <Navbar />
+    <div className="bg-cream dark:bg-dark text-dark dark:text-cream min-h-screen font-light transition-colors duration-300">
+      <Navbar dark={dark} onToggleDark={toggleDark} />
       <Hero />
       <About />
       <Education />
@@ -37,6 +56,7 @@ export default function App() {
       <Skills />
       <Contact />
       <Footer />
+      <BackToTop />
     </div>
   )
 }
